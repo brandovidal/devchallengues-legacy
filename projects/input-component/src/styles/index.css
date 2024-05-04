@@ -1,0 +1,88 @@
+@import url('https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css');
+
+/* Fonts */
+/*--------------------*/
+@font-face {
+  font-family: 'NotoSansJP';
+  src: url('/fonts/NotoSansJP.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url('/fonts/UbuntuMono.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'NotoSansJP', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  --font-size-base: clamp(0.9rem, 0.34vw + 0.7rem, 1rem);
+  --font-size-sm: clamp(0.85rem, 0.5vw + 0.95rem, 0.865rem);
+  --font-size-md: clamp(1rem, 0.5vw + 0.95rem, 1.25rem);
+  --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.75rem);
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+  --margin-base: clamp(0.9rem, 0.34vw + 0.7rem, 1rem);
+  --margin-sm: clamp(0.7rem, 0.5vw + 0.75rem, 0.75rem);
+  --margin-md: clamp(1rem, 0.5vw + 0.95rem, 1.25rem);
+  --margin-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+  --margin-xl: clamp(1.2rem, 0.7vw + 1.5rem, 1.75rem);
+  --margin-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 2.25rem);
+
+  --padding-sm: clamp(0.9rem, 0.34vw + 0.7rem, 1rem) clamp(0.85rem, 0.5vw + 0.95rem, 0.865rem);
+  --padding-md: clamp(1rem, 0.5vw + 0.95rem, 1.25rem) clamp(0.9rem, 0.34vw + 0.7rem, 1rem);
+  --padding-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem) clamp(1rem, 0.5vw + 0.95rem, 1.25rem);
+  --padding-xl: clamp(1.2rem, 0.7vw + 1.5rem, 1.75rem) clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+  --padding-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 2.25rem) clamp(1.2rem, 0.7vw + 1.5rem, 1.75rem);
+
+  --color-white: #ffffff;
+  --color-default: #828282;
+  --color-primary: #2962FF;
+  --color-secondary: #333333;
+  --color-danger: #D32F2F;
+  --color-dark: #4F4F4F;
+  --color-muted: #9e9e9e;
+
+  --bg-default: #333333;
+  --bg-primary: var(--color-primary);
+  --bg-secondary: #828282;
+  --bg-disabled: #F2F2F2;
+  --bg-gray: #F2F2F2;
+  --bg-dark: #E0E0E0;
+  --bg-danger: var(--color-danger);
+  --bg-transparent: transparent;
+
+  --bg-hover-default: #828282;
+  --bg-hover-primary: #2962FF;
+  --bg-hover-secondary: #333333;
+  --bg-hover-danger: #9a0007;
+  --bg-hover-transparent: rgba(41, 98, 255, 0.1);
+
+  --transition-duration: 0.25s;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--color-default);
+  font-size: var(--font-size-base);
+}
