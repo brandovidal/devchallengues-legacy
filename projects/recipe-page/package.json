@@ -12,5 +12,7 @@
     "lint:fix": "standard --fix",
     "clean": "rimraf node_modules/ pnpm-lock.yaml dist/"
   },
-  "devDependencies": {  }
+  "devDependencies": {  
+    "vite": "5.2.11"
+  }
 }
