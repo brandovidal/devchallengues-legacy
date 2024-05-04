@@ -1,0 +1,11 @@
+/* Item */
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    gap: var(--padding-lg);
+    row-gap: var(--padding-sm);
+    margin-bottom: var(--margin-2xl);
+}
