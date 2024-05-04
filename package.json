@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/brandovidal/devchallengues-legacy#readme",
   "devDependencies": {
-    "rimraf": "3.0.2",
+    "vite": "5.2.11",
+    "rimraf": "5.0.5",
     "standard": "17.1.0"
   },
   "eslintConfig": {
