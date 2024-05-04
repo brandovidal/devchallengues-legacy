@@ -1,0 +1,39 @@
+{
+  "name": "devchallengues-legacy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint-fix": "standard --fix"
+  },
+  "workspaces": [
+    "projects/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandovidal/devchallengues-legacy.git"
+  },
+  "keywords": [
+    "devchallengues-legacy",
+    "projects"
+  ],
+  "author": "Brando Vidal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandovidal/devchallengues-legacy/issues"
+  },
+  "homepage": "https://github.com/brandovidal/devchallengues-legacy#readme",
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json",
+    "ignorePatterns": "build",
+    "rules": {
+      "no-unused-vars": "warn",
+      "react/prop-types": "off",
+      "react-hooks/rules-of-hooks": "off"
+    }
+  }
+}
