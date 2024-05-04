@@ -10,10 +10,9 @@
     "preview": "vite preview",
     "lint": "standard",
     "lint:fix": "standard --fix",
-    "clean": "rimraf node_modules/ dist/"
+    "clean": "rimraf node_modules/ pnpm-lock.yaml dist/"
   },
   "devDependencies": {
-    "@types/node": "18.0.3",
-    "vite": "2.9.14"
+    "vite": "5.2.11"
   }
 }

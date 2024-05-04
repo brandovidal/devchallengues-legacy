@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "standard",
     "lint-fix": "standard --fix",
-    "clean": "rimraf node_modules/ pnpm-lock.yaml dist/"
+    "clean": "rimraf **/node_modules/ **/pnpm-lock.yaml **/dist/"
   },
   "workspaces": [
     "projects/*"
