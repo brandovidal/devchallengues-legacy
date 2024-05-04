@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Checkout Page</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=5" />
+    <meta name="keywords" content="devchallengues, Checkout Page" />
+    <meta name="description" content="Checkout Page" />
+    <meta name="theme-color" content="#16161D" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <meta name="description" content="Checkout Page" data-react-helmet="true" />
+    <meta property="og:title" content="Checkout Page" data-react-helmet="true" />
+    <meta property="og:description" content="Checkout Page" data-react-helmet="true" />
+    <meta property="og:url" content="https://checkout-page.pages.dev/" data-react-helmet="true" />
+    <meta property="og:image" content="./logo192.png" data-react-helmet="true" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1 class="title">Checkout</h1>
+      <main>
+        <form id="formCheckout" name="formCheckout" class="checkout" validate="none">
+          <div class="info">
+            <h3 class="title">Contact infomation</h3>
+            <div class="group">
+              <label for="txtEmail">E-mail</label>
+              <div class="control">
+                <img class="icon" src="/icons/email.svg" alt="Email" />
+                <input
+                  id="txtEmail"
+                  type="email"
+                  minlength="1"
+                  maxlength="50"
+                  autocomplete="new-email"
+                  placeholder="Enter your email..."
+                />
+              </div>
+              <small class="text-danger" id="errorEmail"></small>
+            </div>
+            <div class="group">
+              <label for="txtPhone">Phone</label>
+              <div class="control">
+                <img class="icon" src="/icons/phone.svg" alt="Email" />
+                <input
+                  id="txtPhone"
+                  type="tel"
+                  minlength="1"
+                  maxlength="12"
+                  autocomplete="new-password"
+                  placeholder="Enter your phone..."
+                  oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                />
+              </div>
+              <small class="text-danger" id="errorPhone"></small>
+            </div>
+          </div>
+          <div class="info">
+            <h3 class="title">Shipping address</h3>
+            <div class="group">
+              <label for="txtName">Full name</label>
+              <div class="control">
+                <img class="icon" src="/icons/user.svg" alt="Email" />
+                <input
+                  id="txtName"
+                  type="text"
+                  minlength="1"
+                  maxlength="50"
+                  autocomplete="new-password"
+                  placeholder="Rodney Cotton"
+                />
+              </div>
+              <small class="text-danger" id="errorName"></small>
+            </div>
+            <div class="group">
+              <label for="txtAddress">Your address..</label>
+              <div class="control">
+                <img class="icon" src="/icons/home.svg" alt="Email" />
+                <input
+                  id="txtAddress"
+                  type="text"
+                  minlength="1"
+                  maxlength="50"
+                  autocomplete="new-password"
+                  placeholder="Your address.."
+                />
+              </div>
+              <small class="text-danger" id="errorAddress"></small>
+            </div>
+            <div class="group">
+              <label for="txtCity">City</label>
+              <div class="control">
+                <img class="icon" src="/icons/city.svg" alt="Email" />
+                <input
+                  id="txtCity"
+                  type="text"
+                  minlength="1"
+                  maxlength="50"
+                  autocomplete="new-password"
+                  placeholder="Your city.."
+                />
+              </div>
+              <small class="text-danger" id="errorCity"></small>
+            </div>
+            <div class="full">
+              <div class="group padding-right">
+                <label for="selCountry">Country</label>
+                <div class="control">
+                  <img class="icon" src="/icons/city.svg" alt="Email" />
+                  <select name="selCountry" id="selCountry" placeholder="Your country..">
+                    <option value="">Your country..</option>
+                  </select>
+                </div>
+                <small class="text-danger" id="errorCountry"></small>
+              </div>
+              <div class="group">
+                <label for="txtPostal">Postal code</label>
+                <div class="control">
+                  <img class="icon" src="/icons/folder.svg" alt="Email" />
+                  <input
+                    id="txtPostal"
+                    type="tel"
+                    minlength="1"
+                    maxlength="10"
+                    autocomplete="new-password"
+                    placeholder="Your postal code.."
+                    oninput="this.value = this.value.replace(/[^a-z0-9-]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                  />
+                </div>
+                <small class="text-danger" id="errorPostal"></small>
+              </div>
+            </div>
+            <div class="full group">
+              <div>
+                <input type="checkbox" id="chkSave" />
+                <label for="chkSave">Save this information for next time</label>
+              </div>
+            </div>
+            <div class="full justify-end">
+              <button id="btnSave" type="submit">Continue</button>
+            </div>
+          </div>
+        </form>
+        <article class="cart">
+          <div class="list">
+            <div class="item">
+              <picture>
+                <img src="/img/photo1.png" alt="Vintage Backbag" />
+              </picture>
+              <div class="product">
+                <div class="name">Vintage Backbag</div>
+                <div class="price">
+                  <div class="ofert">$<span class="value">54.99</span></div>
+                  <div class="real">$94.99</div>
+                </div>
+                <div class="quantity">
+                  <button id="btnMinus1" type="button" class="secondary">-</button>
+                  <label id="counter1" class="counter">1</label>
+                  <button id="btnSum1" type="button" class="secondary">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <picture>
+                <img src="/img/photo2.png" alt="Levi Shoes" />
+              </picture>
+              <div class="product">
+                <div class="name">Levi Shoes</div>
+                <div class="price">
+                  <div class="ofert">$<span class="value">74.99</span></div>
+                  <div class="real">$124.99</div>
+                </div>
+                <div class="quantity">
+                  <button id="btnMinus2" type="button" class="secondary">-</button>
+                  <label id="counter2" class="counter">1</label>
+                  <button id="btnSum2" type="button" class="secondary">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="resumen">
+            <div class="item">
+              <label>Shipping</label>
+              <div class="cost">$<span class="shipping">19</span></div>
+            </div>
+            <div class="item">
+              <label>Total</label>
+              <div class="cost">$<span class="total">148.98</span></div>
+            </div>
+          </div>
+        </article>
+      </main>
+      <footer class="footer">Brando Vidal @ DevChallenges.io</footer>
+    </section>
+
+    <script type="module" src="./main.js"></script>
+    <!-- <script src="/index.js"></script> -->
+  </body>
+</html>
+
+<a id="btnAlert" class="hidden" rel="nofollow" href="#alert">alert</a>
+
+<div id="alert" class="overlay">
+  <div class="popup">
+    <h2>Checkout Page</h2>
+    <div class="content">Your order was sent correctly</div>
+    <a class="close-button" href="#">OK</a>
+  </div>
+</div>
