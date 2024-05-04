@@ -13,7 +13,9 @@ Proyectos para [Devchallengues legacy](https://legacy.devchallenges.io/)
 | `05`   | My Team gallery     | [Ver](projects/my-team-page/)        | [Visitar](https://my-team-page-devchallengeio.netlify.app)        |
 | `06`   | Checkout page       | [Ver](projects/checkout-page/)       | [Visitar](https://checkout-page-devchallengeio.netlify.app)       |
 | `07`   | Edie homepage       | [Ver](projects/edie-homepage/)       | [Visitar](https://edie-homepage-devchallengeio.netlify.app)       |
-| `07`   | Portfolio master    | [Ver](projects/portfolio-master/)    | [Visitar](https://portfolio-master-devchallengeio.netlify.app)    |
+| `08`   | Portfolio master    | [Ver](projects/portfolio-master/)    | [Visitar](https://portfolio-master-devchallengeio.netlify.app)    |
+| `09`   | Button component    | [Ver](projects/button-component/)    | [Visitar](https://button-component-devchallengeio.netlify.app)    |
+| `10`   | Input component     | [Ver](projects/input-component/)     | [Visitar](https://input-component-devchallengeio.netlify.app)     |
 
 ## Contact
 
