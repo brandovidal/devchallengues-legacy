@@ -1,9 +1,9 @@
 import { useMemo, useRef, useState } from 'react'
 
 import INITIAL_STAYS from './data/stays.json'
-const COUNTRY = 'Finland'
 
 import './App.css'
+const COUNTRY = 'Finland'
 
 interface ToogleElement {
   element: React.RefObject<HTMLElement | HTMLDivElement>
@@ -11,7 +11,7 @@ interface ToogleElement {
 }
 
 function toogleElement ({ element, show = true }: ToogleElement) {
-  if (!element.current) return
+  if (element.current == null) return
 
   element.current.classList.add('hidden')
   if (show) {
@@ -22,7 +22,10 @@ function toogleElement ({ element, show = true }: ToogleElement) {
 function App () {
   // get data
   const country = COUNTRY
-  const locations = useMemo(() => [...new Set(INITIAL_STAYS.map(stay => stay.city))], [])
+  const locations = useMemo(
+    () => [...new Set(INITIAL_STAYS.map(stay => stay.city))],
+    []
+  )
 
   const filterRef = useRef<HTMLElement>(null)
   const locationRef = useRef<HTMLDivElement>(null)
@@ -79,10 +82,13 @@ function App () {
   }
 
   const searchFiltersClickHandle = () => {
-    const filteredStayList = INITIAL_STAYS.filter(stay => stay.city === location && stay.maxGuests >= guests)
+    const filteredStayList = INITIAL_STAYS.filter(
+      stay => stay.city === location && stay.maxGuests >= guests
+    )
     console.log({ INITIAL_STAYS, filteredStayList, location, guests })
 
-    const newStaysList = filteredStayList.length === 0 ? INITIAL_STAYS : filteredStayList
+    const newStaysList =
+      filteredStayList.length === 0 ? INITIAL_STAYS : filteredStayList
     setStayList(newStaysList)
 
     closeClickHandle()
@@ -92,100 +98,180 @@ function App () {
     <>
       <header className='header'>
         <h1>
-          <img src="/logo.svg" alt="windbnb" />
+          <img src='/logo.svg' alt='windbnb' />
         </h1>
 
         <aside>
-          <section className="card search-content" onClick={showFilterClickHandle}>
-            <div className="item">
-              <p className="location">Helsinki, Finland</p>
+          <section
+            className='card search-content'
+            onClick={showFilterClickHandle}
+          >
+            <div className='item'>
+              <p className='location'>Helsinki, Finland</p>
             </div>
-            <div className="item">
-              <p className="guest">Add guests</p>
+            <div className='item'>
+              <p className='guest'>Add guests</p>
             </div>
-            <div className="item">
-              <button className="btn-transparent" title='Search' onClick={searchClickHandle}>
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon-search" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="2"
-                  strokeLinecap="round" strokeLinejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                  <path d="M21 21l-6 -6" />
+            <div className='item'>
+              <button
+                className='btn-transparent'
+                title='Search'
+                onClick={searchClickHandle}
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='icon-search'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                  fill='none'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                  <path d='M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0' />
+                  <path d='M21 21l-6 -6' />
                 </svg>
               </button>
             </div>
           </section>
         </aside>
 
-        <section ref={filterRef} className="filter-container hidden">
-          <div className="item heading-item">
+        <section ref={filterRef} className='filter-container hidden'>
+          <div className='item heading-item'>
             <h3>Edit your search</h3>
-            <button className="btn-transparent" title='Close' onClick={closeClickHandle}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon-close" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none"
-                strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M18 6l-12 12" />
-                <path d="M6 6l12 12" />
+            <button
+              className='btn-transparent'
+              title='Close'
+              onClick={closeClickHandle}
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='icon-close'
+                width='44'
+                height='44'
+                viewBox='0 0 24 24'
+                strokeWidth='1.5'
+                stroke='#2c3e50'
+                fill='none'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M18 6l-12 12' />
+                <path d='M6 6l12 12' />
               </svg>
             </button>
           </div>
-          <div className="item filter-item">
-            <div className="card filter">
-              <div className="item" onClick={showLocationHandle}>
+          <div className='item filter-item'>
+            <div className='card filter'>
+              <div className='item' onClick={showLocationHandle}>
                 <label>location</label>
-                <p className="location">{location ? `${location}, ${country}` : 'Add Location'}</p>
+                <p className='location'>
+                  {location ? `${location}, ${country}` : 'Add Location'}
+                </p>
               </div>
-              <div className="item" onClick={showGuestHandle}>
+              <div className='item' onClick={showGuestHandle}>
                 <label>guest</label>
-                <p className="guest">{guests ? `${guests} guests` : 'Add guests'}</p>
+                <p className='guest'>
+                  {guests ? `${guests} guests` : 'Add guests'}
+                </p>
               </div>
             </div>
           </div>
-          <div className="item search-item">
-            <button className="btn-primary" title='Search' onClick={searchFiltersClickHandle}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon-searc primary" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="2"
-                strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                <path d="M21 21l-6 -6" />
+          <div className='item search-item'>
+            <button
+              className='btn-primary'
+              title='Search'
+              onClick={searchFiltersClickHandle}
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='icon-searc primary'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+                fill='none'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0' />
+                <path d='M21 21l-6 -6' />
               </svg>
               <span>Search</span>
             </button>
           </div>
-          <div ref={locationRef} className="item location-item">
+          <div ref={locationRef} className='item location-item'>
             <section className='location-container'>
-              {
-                locations.map((location, index) => (
-                  <div className="item" key={index} onClick={selectLocationHandle(location)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="icon-map" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none"
-                      strokeLinecap="round" strokeLinejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"
-                        strokeWidth="0" fill="currentColor" />
-                    </svg>
-                    <p className="value">{location}, {country}</p>
-                  </div>
-                ))
-              }
+              {locations.map((location, index) => (
+                <div
+                  className='item'
+                  key={index}
+                  onClick={selectLocationHandle(location)}
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='icon-map'
+                    width='44'
+                    height='44'
+                    viewBox='0 0 24 24'
+                    strokeWidth='1.5'
+                    stroke='#2c3e50'
+                    fill='none'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                    <path
+                      d='M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z'
+                      strokeWidth='0'
+                      fill='currentColor'
+                    />
+                  </svg>
+                  <p className='value'>
+                    {location}, {country}
+                  </p>
+                </div>
+              ))}
             </section>
           </div>
-          <div ref={guestRef} className="item guest-item hidden">
-            <section className="guest-container">
-              <div className="item">
+          <div ref={guestRef} className='item guest-item hidden'>
+            <section className='guest-container'>
+              <div className='item'>
                 <label>Adults</label>
                 <p>Ages 13 or above</p>
-                <div className="counter-container">
-                  <button className="btn-outline" onClick={substractAdultsHandle}>-</button>
-                  <p className="counter">{adults}</p>
-                  <button className="btn-outline" onClick={addAdultsHandle}>+</button>
+                <div className='counter-container'>
+                  <button
+                    className='btn-outline'
+                    onClick={substractAdultsHandle}
+                  >
+                    -
+                  </button>
+                  <p className='counter'>{adults}</p>
+                  <button className='btn-outline' onClick={addAdultsHandle}>
+                    +
+                  </button>
                 </div>
               </div>
-              <div className="item">
+              <div className='item'>
                 <label>Children</label>
                 <p>Ages 2-12</p>
-                <div className="counter-container">
-                  <button className="btn-outline" onClick={substractChildrenHandle}>-</button>
-                  <p className="counter">{children}</p>
-                  <button className="btn-outline" onClick={addChildrenHandle}>+</button>
+                <div className='counter-container'>
+                  <button
+                    className='btn-outline'
+                    onClick={substractChildrenHandle}
+                  >
+                    -
+                  </button>
+                  <p className='counter'>{children}</p>
+                  <button className='btn-outline' onClick={addChildrenHandle}>
+                    +
+                  </button>
                 </div>
               </div>
             </section>
@@ -195,36 +281,54 @@ function App () {
 
       <main>
         <div className='heading'>
-          <h2 className="title">Stays in Finland</h2>
-          <p className="stays">{stayList.length}+ stays</p>
+          <h2 className='title'>Stays in Finland</h2>
+          <p className='stays'>{stayList.length}+ stays</p>
         </div>
-        <section className="stay-container">
-          {
-            stayList.map((stay, index) =>
-            (<div key={index} className="item">
-              <img src={stay.photo} alt={stay.title} className="image" />
+        <section className='stay-container'>
+          {stayList.map((stay, index) => (
+            <div key={index} className='item'>
+              <img src={stay.photo} alt={stay.title} className='image' />
               <article>
-                <div className="tag">
-                  {stay.superHost && (<label className="badge">Super host</label>)}
-                  <p className="description">
+                <div className='tag'>
+                  {stay.superHost && (
+                    <label className='badge'>Super host</label>
+                  )}
+                  <p className='description'>
                     {stay.type}
-                    {stay.beds && (<span>{` . ${stay.beds} ${stay.beds === 1 ? 'bed' : ' beds'}`}</span>)}
+                    {stay.beds && (
+                      <span>{` . ${stay.beds} ${
+                        stay.beds === 1 ? 'bed' : ' beds'
+                      }`}
+                      </span>
+                    )}
                   </p>
                 </div>
-                <div className="rating">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="icon-star" width="16" height="16" viewBox="0 0 24 24" strokeWidth="1.5" stroke="none" fill="none"
-                    strokeLinecap="round" strokeLinejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                      strokeWidth="0" fill="currentColor" />
+                <div className='rating'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='icon-star'
+                    width='16'
+                    height='16'
+                    viewBox='0 0 24 24'
+                    strokeWidth='1.5'
+                    stroke='none'
+                    fill='none'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                    <path
+                      d='M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z'
+                      strokeWidth='0'
+                      fill='currentColor'
+                    />
                   </svg>
                   <span>{stay.rating}</span>
                 </div>
               </article>
-              <h5 className="title">{stay.title}</h5>
-            </div>)
-            )
-          }
+              <h5 className='title'>{stay.title}</h5>
+            </div>
+          ))}
         </section>
       </main>
 

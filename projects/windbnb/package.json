@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix",
     "preview": "vite preview",
     "clean": "rimraf node_modules/ dist/"
   },
@@ -15,15 +16,24 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@types/node": "20.12.8",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
-    "@typescript-eslint/eslint-plugin": "7.8.0",
-    "@typescript-eslint/parser": "7.8.0",
     "@vitejs/plugin-react-swc": "3.6.0",
-    "eslint": "9.2.0",
-    "eslint-plugin-react-hooks": "4.6.2",
-    "eslint-plugin-react-refresh": "0.4.6",
+    "husky": "9.0.11",
+    "rimraf": "5.0.5",
+    "ts-standard": "12.0.2",
     "typescript": "5.4.5",
     "vite": "5.2.11"
+  },
+  "ts-standard": {
+    "project": "./tsconfig.json",
+    "ignore": [
+      "dist/",
+      "node_modules/",
+      "src/**/*.js",
+      "src/**/*.d.ts",
+      "**/*.config.ts"
+    ]
   }
 }
