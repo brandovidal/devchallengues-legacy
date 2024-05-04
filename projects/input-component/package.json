@@ -16,8 +16,7 @@
     "preview": "vite preview",
     "lint": "ts-standard",
     "lint-fix": "ts-standard --fix",
-    "clean": "rimraf node_modules/ dist/",
-    "prepare": "husky install"
+    "clean": "rimraf node_modules/ dist/"
   },
   "dependencies": {
     "classnames": "2.5.1",
