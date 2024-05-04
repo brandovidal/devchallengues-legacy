@@ -2,11 +2,12 @@
 
 Proyectos para [Devchallengues legacy](https://legacy.devchallenges.io/)
 
-<!-- ## ⌨️ Proyectos
+## ⌨️ Proyectos
 
-| Número | Proyecto | Código | Web |
-| --- | --- | --- | --- |
-| `01` | Tic Tac Toe | [Ver](projects/01-not-found/) | [Visitar](https://exmaple.app/) | -->
+| Número | Proyecto      | Código                         | Web                                                           |
+| ------ | ------------- | ------------------------------ | ------------------------------------------------------------- |
+| `01`   | 404 Not found | [Ver](projects/404-not-found/) | [Visitar](https://404-not-found-devchallengeio.netlify.app//) |
+<!--   | `01`          | 404 Not found                  | [Ver](projects/404-not-found/)                                | [Visitar](https://exmaple.app/) | -->
 
 ## Contact
 
