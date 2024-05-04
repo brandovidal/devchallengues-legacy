@@ -4,12 +4,13 @@ Proyectos para [Devchallengues legacy](https://legacy.devchallenges.io/)
 
 ## ⌨️ Proyectos
 
-| Número | Proyecto            | Código                               | Web                                                           |
-| ------ | ------------------- | ------------------------------------ | ------------------------------------------------------------- |
-| `01`   | 404 Not found       | [Ver](projects/404-not-found/)       | [Visitar](https://404-not-found-devchallengeio.netlify.app//) |
-| `02`   | My Team gallery     | [Ver](projects/my-gallery-page/)     | [Visitar](https://my-gallery-page-devchallengeio.netlify.app) |
+| Número | Proyecto            | Código                               | Web                                                               |
+| ------ | ------------------- | ------------------------------------ | ----------------------------------------------------------------- |
+| `01`   | 404 Not found       | [Ver](projects/404-not-found/)       | [Visitar](https://404-not-found-devchallengeio.netlify.app//)     |
+| `02`   | My Team gallery     | [Ver](projects/my-gallery-page/)     | [Visitar](https://my-gallery-page-devchallengeio.netlify.app)     |
 | `03`   | Interior consultant | [Ver](projects/interior-consultant/) | [Visitar](https://interior-consultant-devchallengeio.netlify.app) |
-| `04`   | My Team gallery     | [Ver](projects/my-team-page/)        | [Visitar](https://my-team-page-devchallengeio.netlify.app)    |
+| `04`   | Recipe Blog         | [Ver](projects/recipe-page/)         | [Visitar](https://recipe-page-devchallengeio.netlify.app)         |
+| `04`   | My Team gallery     | [Ver](projects/my-team-page/)        | [Visitar](https://my-team-page-devchallengeio.netlify.app)        |
 
 ## Contact
 
